@@ -625,3 +625,45 @@ footer a:hover {
   text-align: center;
   z-index: 2;
 }
+
+/* Carrito entradas modo claro */
+.carrito-container {
+  /* No color de fondo, se adapta al body */
+}
+.carrito-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px;
+}
+.carrito-resumen {
+  background: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 32px;
+}
+
+/* Carrito modo oscuro mejorado */
+.dark-mode .carrito-card {
+  background: #232323 !important;
+  color: #f2f2f2 !important;
+  border: 1.5px solid #444 !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25) !important;
+}
+.dark-mode .carrito-resumen {
+  background: #181818 !important;
+  color: #f2f2f2 !important;
+  border: 1.5px solid #333 !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25) !important;
+}
+.dark-mode .carrito-card button,
+.dark-mode .carrito-resumen button {
+  background: #333 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+.dark-mode .carrito-card button:hover,
+.dark-mode .carrito-resumen button:hover {
+  background: #1976d2 !important;
+  color: #fff !important;
+}
