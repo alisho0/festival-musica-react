@@ -4,15 +4,11 @@ import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import cocaColaLogo from '../assets/sponsors/coca-cola.jpg';
-import claroLogo from '../assets/sponsors/claro.jpg';
-import itseLogo from '../assets/sponsors/itse.jpg';
+import cocaColaLogo from "../assets/sponsors/coca-cola.jpg";
+import claroLogo from "../assets/sponsors/claro.jpg";
+import itseLogo from "../assets/sponsors/itse.jpg";
 
 export const Inicio = () => {
-  // Estado para modo oscuro
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("darkMode") === "true";
-  });
   // Estado para cuenta regresiva
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -88,14 +84,6 @@ export const Inicio = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Alternar modo oscuro
-  const toggleDarkMode = () => {
-    setDarkMode((prev) => {
-      localStorage.setItem("darkMode", !prev);
-      return !prev;
-    });
-  };
-
   // Configuración del slider
   const sliderSettings = {
     dots: true,
@@ -109,36 +97,7 @@ export const Inicio = () => {
   };
 
   return (
-    <div className={darkMode ? "dark-mode" : ""}>
-      <header className="navegacion">
-        <h1 className="pulse">Festival "Sonidos de la Ciudad"</h1>
-        <button className="modo-btn" onClick={toggleDarkMode}>
-          {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-        </button>
-        <nav>
-          <ul>
-            <li>
-              <a href="/index.html">Inicio</a>
-            </li>
-            <li>
-              <a href="/pages/artistas.html">Artistas</a>
-            </li>
-            <li>
-              <a href="/pages/cronograma.html">Cronograma</a>
-            </li>
-            <li>
-              <a href="/pages/entradas.html">Entradas</a>
-            </li>
-            <li>
-              <a href="/pages/ubicacion.html">Ubicación</a>
-            </li>
-            <li>
-              <a href="/pages/contacto.html">Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+    <>
       {/* Banner con slider y parallax */}
       <motion.section
         initial={{ opacity: 0, y: -40 }}
@@ -160,10 +119,8 @@ export const Inicio = () => {
         <div className="countdown countdown-banner">
           <h2>¡Faltan solo:</h2>
           <div className="countdown-numbers">
-            <span>{countdown.days}d</span>{" "}
-            <span>{countdown.hours}h</span>{" "}
-            <span>{countdown.minutes}m</span>{" "}
-            <span>{countdown.seconds}s</span>
+            <span>{countdown.days}d</span> <span>{countdown.hours}h</span>{" "}
+            <span>{countdown.minutes}m</span> <span>{countdown.seconds}s</span>
           </div>
           <p>para el festival</p>
         </div>
@@ -268,7 +225,7 @@ export const Inicio = () => {
           <a href="mailto:sonidosciudad@gmail.com">sonidosciudad@gmail.com</a>
         </p>
       </footer>
-    </div>
+    </>
   );
 };
 
