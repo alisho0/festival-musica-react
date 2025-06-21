@@ -126,6 +126,34 @@ export const Inicio = () => {
         </div>
       </motion.section>
 
+      {/* Cartel de bienvenida */}
+      <section
+        className="bienvenida-section"
+        style={{ textAlign: "center", margin: "2rem 0 0 0" }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bienvenida-banner"
+        >
+          <h1
+            className="fw-bold"
+            style={{
+              fontSize: "2.3rem",
+              color: "#05299e",
+              marginBottom: "0.5rem",
+            }}
+          >
+            ¡Bienvenido al festival Sonidos de la Ciudad!
+          </h1>
+          <p style={{ fontSize: "1.2rem", color: "#333" }}>
+            Del 18 al 20 de julio en el Nodo Tecnológico. No te pierdas los
+            mejores sonidos de la ciudad.
+          </p>
+        </motion.div>
+      </section>
+
       <main>
         {/* Razones para venir */}
         <motion.section
