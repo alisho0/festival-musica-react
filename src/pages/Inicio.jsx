@@ -188,9 +188,9 @@ export const Inicio = () => {
             <div className="fechas-col">
               <h3>Fechas del festival</h3>
               <ul>
-                <li>2 de mayo - 18:00 a 21:00</li>
-                <li>3 de mayo - 18:00 a 21:00</li>
-                <li>4 de mayo - 19:00 a 21:00</li>
+                <li>18 de mayo - 20:00 a 00:00</li>
+                <li>19 de mayo - 20:00 a 00:00</li>
+                <li>20 de mayo - 20:00 a 00:00</li>
               </ul>
             </div>
             <div className="artistas-col">
