@@ -4,7 +4,7 @@ import { Navbar } from "./components/Navbar"
 import { Artistas } from "./pages/Artistas"
 import { Entradas } from "./pages/Entradas"
 import { Ubicacion } from "./pages/Ubicacion"
-import { Contacto } from "./pages/Contacto"
+import Contacto from "./pages/Contacto";
 import { Cronograma } from "./pages/Cronograma"
 
 
