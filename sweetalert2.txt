@@ -1,0 +1,2 @@
+// Agrega SweetAlert2 a tu proyecto
+// npm install sweetalert2

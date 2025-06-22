@@ -6,6 +6,7 @@ import { Entradas } from "./pages/Entradas"
 import { Ubicacion } from "./pages/Ubicacion"
 import Contacto from "./pages/Contacto";
 import { Cronograma } from "./pages/Cronograma"
+import CarritoEntradas from "./pages/CarritoEntradas"
 
 
 function FestivalApp() {
@@ -18,6 +19,7 @@ function FestivalApp() {
         <Route path="/" element={<Inicio />} />
         <Route path="artistas" element={<Artistas />} />
         <Route path="entradas" element={<Entradas />} />
+        <Route path="carrito-entradas" element={<CarritoEntradas />} />
         <Route path="ubicacion" element={<Ubicacion />} />
         <Route path="contacto" element={<Contacto />} />
         <Route path="cronograma" element={<Cronograma />}/>
