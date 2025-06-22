@@ -35,13 +35,6 @@ export const Inicio = () => {
     },
   ];
 
-  // Slider imágenes
-  const sliderImages = [
-    "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80",
-  ];
-
   // Razones para venir
   const razones = [
     { icon: "fa-solid fa-music", text: "Artistas de primer nivel" },
@@ -84,18 +77,6 @@ export const Inicio = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Configuración del slider
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3500,
-    arrows: false,
-  };
-
   return (
     <>
       {/* Banner con slider y parallax */}
@@ -103,19 +84,10 @@ export const Inicio = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="banner-parallax"
+        className="banner-bg"
+        style={{ overflow: "hidden", width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}
       >
         <div className="banner-bg-seq"></div>
-        <Slider {...sliderSettings}>
-          {sliderImages.map((img, idx) => (
-            <div key={idx}>
-              <div
-                className="slider-img"
-                style={{ backgroundImage: `url(${img})` }}
-              ></div>
-            </div>
-          ))}
-        </Slider>
         <div className="countdown countdown-banner">
           <h2>¡Faltan solo:</h2>
           <div className="countdown-numbers">
@@ -128,8 +100,8 @@ export const Inicio = () => {
 
       {/* Cartel de bienvenida */}
       <section
-        className="bienvenida-section"
-        style={{ textAlign: "center", margin: "2rem 0 0 0" }}
+        className="bienvenida-section container"
+        style={{ textAlign: "center", margin: "2rem auto 0 auto" }}
       >
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -138,7 +110,7 @@ export const Inicio = () => {
           className="bienvenida-banner"
         >
           <h1
-            className="fw-bold"
+            className="fw-bold pulse"
             style={{
               fontSize: "2.3rem",
               color: "#05299e",
@@ -154,7 +126,7 @@ export const Inicio = () => {
         </motion.div>
       </section>
 
-      <main>
+      <main className="container-fluid px-0" style={{overflowX: 'hidden'}}>
         {/* Razones para venir */}
         <motion.section
           initial={{ opacity: 0, x: -40 }}
@@ -163,12 +135,13 @@ export const Inicio = () => {
           viewport={{ once: true }}
         >
           <h2>¿Por qué venir?</h2>
-          <div className="razones-lista">
+          <div className="razones-lista row justify-content-center">
             {razones.map((r, i) => (
               <motion.div
                 key={i}
-                className="razon-card"
+                className="razon-card col-12 col-sm-6 col-md-3 mb-3"
                 whileHover={{ scale: 1.08 }}
+                style={{ minWidth: 0 }}
               >
                 <i className={r.icon + " razon-icono"}></i>
                 <span>{r.text}</span>
@@ -184,8 +157,8 @@ export const Inicio = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="fechas-artistas-grid">
-            <div className="fechas-col">
+          <div className="fechas-artistas-grid ">
+            <div className="fechas-col ">
               <h3>Fechas del festival</h3>
               <ul>
                 <li>18 de mayo - 20:00 a 00:00</li>
@@ -193,7 +166,7 @@ export const Inicio = () => {
                 <li>20 de mayo - 20:00 a 00:00</li>
               </ul>
             </div>
-            <div className="artistas-col">
+            <div className="artistas-col ">
               <h3>Artistas principales</h3>
               <ul>
                 <li>Los Piojos</li>
@@ -214,16 +187,17 @@ export const Inicio = () => {
           viewport={{ once: true }}
         >
           <h3>Escuchá un adelanto de Los Piojos</h3>
-          <iframe
-            width="500"
-            height="300"
-            src="https://www.youtube.com/embed/Ic_URsKMZVM"
-            title="Me matan Limón! – Los Piojos | FIESTA ¡FA! #13 Complejo C Quilmes Rock"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
+          <div className="d-flex justify-content-center">
+            <iframe
+              style={{maxWidth: '100%', width: 500, height: 300}}
+              src="https://www.youtube.com/embed/Ic_URsKMZVM"
+              title="Me matan Limón! – Los Piojos | FIESTA ¡FA! #13 Complejo C Quilmes Rock"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
+          </div>
         </motion.section>
 
         {/* Sponsors */}
@@ -235,10 +209,10 @@ export const Inicio = () => {
           className="sponsors-section"
         >
           <h2>Sponsors</h2>
-          <div className="sponsors-lista">
+          <div className="sponsors-lista row justify-content-center">
             {sponsors.map((s, i) => (
-              <div className="sponsor-card" key={i}>
-                <img src={s.logo} alt={s.name} />
+              <div className="sponsor-card col-6 col-md-4 col-lg-3 mb-3 d-flex flex-column align-items-center" key={i}>
+                <img src={s.logo} alt={s.name} style={{maxWidth: '100%', height: 'auto'}} />
                 <span>{s.name}</span>
               </div>
             ))}
@@ -246,10 +220,10 @@ export const Inicio = () => {
         </motion.section>
       </main>
 
-      <footer>
+      <footer className="container-fluid px-0" style={{overflowX: 'hidden'}}>
         <p>2025 Sonidos de la Ciudad</p>
         <p>
-          Contacto:{" "}
+          Contacto: {" "}
           <a href="mailto:sonidosciudad@gmail.com">sonidosciudad@gmail.com</a>
         </p>
       </footer>

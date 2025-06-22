@@ -25,9 +25,6 @@ export const Navbar = () => {
     <>
       <header className="navegacion">
         <h1 className="pulse">Festival "Sonidos de la Ciudad"</h1>
-        <button className="modo-btn" onClick={toggleDarkMode}>
-          {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
-        </button>
         <nav>
           <ul>
             <li>
@@ -48,6 +45,11 @@ export const Navbar = () => {
             <li>
                 <Link to={"/contacto"} >Contacto</Link>
             </li>
+            {/* <li>
+              <button className="modo-btn" onClick={toggleDarkMode}>
+                {darkMode ? "☀️ Modo Claro" : "🌙 Modo Oscuro"}
+              </button>
+            </li> */}
           </ul>
         </nav>
       </header>
