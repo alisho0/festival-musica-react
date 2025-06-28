@@ -87,7 +87,6 @@ export const Inicio = () => {
         className="banner-bg"
         style={{ overflow: "hidden", width: "100vw", position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}
       >
-        <div className="banner-bg-seq"></div>
         <div className="countdown countdown-banner">
           <h2>¡Faltan solo:</h2>
           <div className="countdown-numbers">
